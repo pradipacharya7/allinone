@@ -1,11 +1,34 @@
 package com.allinone.practice.model;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+import org.springframework.data.repository.cdi.Eager;
+
+import javax.persistence.*;
+
+@Entity
+@Table
 public class Student {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String name;
     private String email;
-    public Student() {
+
+    private int addressId;
+
+    public Student(){
+
     }
+    public int getAddressId() {
+        return addressId;
+    }
+
+    public void setAddressId(int addressId) {
+        this.addressId = addressId;
+    }
+
+
     public int getId() {
         return id;
     }
