@@ -22,8 +22,8 @@
         <td>${status.count}</td>
         <td>${student.name}</td>
         <td>${student.email}</td>
-        <td><a href=" <c:url value="/student/edit?id=${student.id}" />"><i class="fa fa-trash" aria-hidden="true"></i></a>
-            <a href=" <c:url value="/student/delete?id=${student.id}" />"><i class="fa fa-edit"></i></a>
+        <td><a href=" <c:url value="/student/edit?id=${student.id}" />"><i class="fa fa-edit"></i></a>
+            <a href="<c:url value="/student/delete?id=${student.id}" />"><i class="fa fa-trash"></i></a>
         </td>
     </tr>
     </c:forEach>

@@ -10,4 +10,5 @@ public interface StudentRepo extends CrudRepository<Student,Integer> {
    List<Student> findAll();
   Student save(Student Student);
   Student deleteById(int id);
+  Student findById(int id);
 }
