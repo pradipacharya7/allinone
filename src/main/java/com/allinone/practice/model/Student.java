@@ -5,6 +5,10 @@ import org.hibernate.annotations.FetchMode;
 import org.springframework.data.repository.cdi.Eager;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table
@@ -12,9 +16,13 @@ public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+    @NotBlank // any characters besides "space"
+    @Size(min = 4, max = 50, message = "{Size.name.validation}")
     private String name;
+    @Email
+    @NotNull
     private String email;
-
+    @NotNull
     private int addressId;
 
     public Student(){

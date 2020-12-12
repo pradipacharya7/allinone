@@ -1,6 +1,8 @@
 package com.allinone.practice.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table
@@ -8,8 +10,12 @@ public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     int id;
+    @NotNull
     private String state;
+    @NotNull
     private String street;
+    @NotNull
+    @Size(min = 10000, max = 99999)
     private String zipcode;
     public Address(){
 
