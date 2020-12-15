@@ -25,6 +25,13 @@ public class Student {
     @NotNull
     private int addressId;
 
+    public Student(int id, @NotBlank @Size(min = 4, max = 50, message = "{Size.name.validation}") String name, @Email @NotNull String email, @NotNull int addressId) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.addressId = addressId;
+    }
+
     public Student(){
 
     }

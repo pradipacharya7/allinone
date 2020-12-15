@@ -4,3 +4,6 @@ INSERT into authorities (id,authority,username) values (1,'ROLE_USER','user');
 INSERT  INTO user(id,email,fullname,password,status,username) VALUES (2,'abc.xyz@gmail.com','ABC','$2y$10$d/KNOELWUBeGEHaUdJ.wPOcbboFdc18Tg/olj4ujCxRGZ22Y0YniK',true,'admin');
 INSERT INTO authorities (id,authority,username) VALUES (2,'ROLE_ADMIN','admin');
 
+INSERT INTO address(id,state,street,zipcode) values (1,'TX','2000 S','52557');
+INSERT INTO address(id,state,street,zipcode) values (2,'ML','Rolling bend Road S','21244');
+
