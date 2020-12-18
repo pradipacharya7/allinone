@@ -6,7 +6,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.validation.Validator;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
+import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.i18n.CookieLocaleResolver;
 
 @Configuration
 public class WebMVCConfigurerInit implements WebMvcConfigurer {
@@ -26,6 +28,11 @@ public class WebMVCConfigurerInit implements WebMvcConfigurer {
         bean.setValidationMessageSource(messageSource());
         bean.getValidationPropertyMap().put("hibernate.validator.fail_fast", "true");
         return bean;
+    }
+    @Bean
+    public LocaleResolver localeResolver() {
+        CookieLocaleResolver localeResolver = new CookieLocaleResolver();
+        return localeResolver;
     }
     @Override
     public Validator getValidator() {

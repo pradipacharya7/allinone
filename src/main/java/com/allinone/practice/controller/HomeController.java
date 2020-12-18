@@ -9,4 +9,18 @@ public class HomeController {
         return "index";
     }
 
+    @GetMapping("/admin")
+
+    public String showAdmin()
+    {
+        return "admin";
+    }
+
+    @GetMapping("/user")
+
+    public String showuser()
+    {
+        return "user";
+    }
+
 }
