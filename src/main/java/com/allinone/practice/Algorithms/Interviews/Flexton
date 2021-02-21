@@ -1,0 +1,146 @@
+import java.io.*;
+import java.util.*;
+/*
+@
+Given an binary Tree Print the Tree Line by line
+
+     1
+    / \
+   0   3
+  /\
+ 4  5
+
+output ::
+1
+03
+45
+
+*/
+
+@RestController
+@RequestingMapping("/product-apis/")
+class ProductResource{
+  @Autowired
+  ProductService productService;
+
+  @GetMapping("/all-products")
+  public List<Product> getAllProducts(){
+    return productService.findAll();
+  }
+}
+
+class Solution{
+  static class TreeNode{
+    int val;
+    TreeNode left , right;
+      TreeNode(int val){
+        this.val = val;
+        this.left = null;
+        this.right = null;
+      }
+  }
+    public static void printTreeLineByLine(TreeNode root){
+
+      if(root==null) return;
+      Queue<TreeNode> q=new LinkedList<>();
+      q.add(root);
+      while(true){
+        int size=q.size();
+        if(size==0) break;
+        while(size>0){
+          TreeNode node=q.peek();
+          System.out.print(node.val);
+          q.remove();
+          if(node.left!=null) q.add(node.left);
+          if(node.right!=null) q.add(node.right);
+          size--;
+        }
+        System.out.println();
+      }
+    }
+    public static void main(String[] args){
+      TreeNode root = new TreeNode(1);
+      root.left = new TreeNode(0);
+      root.right = new TreeNode(3);
+      root.left.left = new TreeNode(4);
+      root.left.right = new TreeNode(5);
+      printTreeLineByLine(root);
+    }
+}
+
+write a rest controller?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+For a given string "abbbcddddeffabbbbbb"
+return the characters who are consecutively repeated like "bbb"
+and how many times it is consecutively repeated on the string
+
+For example, For a given string "abbbcddddeffabbbbbb"
+return a HashMap like,
+
+b -> 2 Note: (bbb & bbbbbb)
+d -> 1
+f -> 1
+
+Note: “a” appears two times but it is not consecutively
+repeated so it is not included. The same is true for “e”.
+
+import java.util.*;
+class Solution{
+	public static void main(String[] args) {
+	  System.out.println(getMapping("abbbcddddeffabbbbbb"));
+}
+  public static Map<Character , Integer> getMapping(String str) {
+
+    HashMap<Character, Integer> map= new HashMap<Character, Integer>();
+    int count=0;
+    for(int i=0;i<str.length();i++){
+
+      char character=str.charAt(i);
+      if((i+1)< str.length() && character==str.charAt(i+1)){
+        count++;
+      }
+      else{
+        if(count>=1){
+          map.put(character,map.getOrDefault(character,0)+1);
+           count=0;
+        }
+      }
+
+    }
+    return map;
+
+  }
+}
+
+*/
+
+
+/*
+eBay - Software Engineer - java, Spring Boot, REST API
+
+Interview Process
+1. Internal Screening INterview Conducted by Flexton
+2. 2 More Rounds conducted by the client - eBay
+
+The focus is mainly on Problem Solving - Algorithms and Data Structures Questions
+Theory based Questions on java, Spring BOot, REST API
+*/

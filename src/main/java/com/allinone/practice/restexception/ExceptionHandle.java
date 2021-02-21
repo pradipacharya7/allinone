@@ -28,7 +28,6 @@ public class ExceptionHandle extends ResponseEntityExceptionHandler {
         return new ResponseEntity<>(exceptionResponse, HttpStatus.NOT_FOUND);
     }
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-
     public final ResponseEntity<ErrorResponse> handleBadRequestExceptions(Exception ex, WebRequest request) {
         ErrorResponse exceptionResponse = new ErrorResponse(ex.getMessage(), false, new Date(), request.getDescription(false));
         return new ResponseEntity<>(exceptionResponse, HttpStatus.BAD_REQUEST);

@@ -10,15 +10,19 @@ public class a4b4 {
     }
 
     private static void convert(String s) {
-        for(int i=0;i<s.length();i++){
-            int count=1;
-            while(i<s.length()-1 && s.charAt(i)==s.charAt(i+1)){
-                count++;
-                i++;
-            }
-            System.out.print(s.charAt(i)+""+count);
 
-        }
+        int a=12; long b=12l;
+//        a=a+b;
+//        System.out.println(a);
+//        for(int i=0;i<s.length();i++){
+//            int count=1;
+//            while(i<s.length()-1 && s.charAt(i)==s.charAt(i+1)){
+//                count++;
+//                i++;
+//            }
+//            System.out.print(s.charAt(i)+""+count);
+//
+//        }
 //        LinkedHashMap<Character,Integer> map=new LinkedHashMap<Character,Integer>();
 //        for(int i=0;i<s.length();i++){
 //            map.put(s.charAt(i),map.getOrDefault(s.charAt(i),0)+1);
